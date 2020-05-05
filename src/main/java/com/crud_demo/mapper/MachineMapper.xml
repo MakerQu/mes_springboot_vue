@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crud_demo.mapper.MachineMapper">
+
+    <insert id="addMac" parameterType="com.crud_demo.entities.Machine">
+        INSERT INTO machine(shebeibianhao,qiye,shebeileixing,chejian,zubie,jihao,zongzhenshu,lushu,jixiechangjia,gongzuomoshi,zhuangtai)
+        VALUES (#{shebeibianhao},#{qiye},#{shebeileixing},#{chejian},#{zubie},#{jihao},#{zongzhenshu},#{lushu},#{jixiechangjia},#{gongzuomoshi},#{zhuangtai})
+    </insert>
+    <delete id="deleteMacById" parameterType="int">
+        DELETE FROM machine WHERE id=#{id}
+    </delete>
+    <update id="updateMacById" parameterType="com.crud_demo.entities.Machine">
+        UPDATE machine set shebeibianhao=#{shebeibianhao},qiye=#{qiye},shebeileixing=#{shebeileixing},
+        chejian=#{chejian},zubie=#{zubie},jihao=#{jihao},
+        zongzhenshu=#{zongzhenshu},lushu=#{lushu},jixiechangjia=#{jixiechangjia},
+        gongzuomoshi=#{gongzuomoshi},zhuangtai=#{zhuangtai}
+        WHERE id=#{id}
+    </update>
+    <select id="getMacById" parameterType="int" resultType="com.crud_demo.entities.Machine">
+        SELECT * FROM machine WHERE id=#{id}
+    </select>
+    <select id="getAllMac" resultType="com.crud_demo.entities.Machine" >
+        SELECT * FROM machine
+    </select>
+</mapper>

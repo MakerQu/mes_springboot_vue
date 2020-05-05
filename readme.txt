@@ -1,0 +1,2 @@
+这个版本完成了数据的查询与显示
+页面时 supplierlist.html

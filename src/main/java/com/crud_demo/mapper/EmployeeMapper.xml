@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crud_demo.mapper.EmployeeMapper">
+    <insert id="addEmp" parameterType="com.crud_demo.entities.Employee">
+        INSERT INTO myuser(username,password,name) VALUES (#{username},#{password},#{name})
+    </insert>
+    <delete id="deleteEmById" parameterType="int">
+        DELETE FROM myuser WHERE id=#{id}
+    </delete>
+    <update id="updateEmpById" parameterType="com.crud_demo.entities.Employee">
+        UPDATE myuser set username=#{username},password=#{password},name=#{name} WHERE id=#{id}
+    </update>
+    <select id="getEmpById" parameterType="int" resultType="com.crud_demo.entities.Employee">
+        SELECT * FROM myuser WHERE id=#{id}
+    </select>
+    <select id="getAllEmps" resultType="com.crud_demo.entities.Employee" >
+        SELECT * FROM myuser
+    </select>
+</mapper>
